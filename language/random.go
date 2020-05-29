@@ -13,7 +13,7 @@ var decimal = "\\b\\d+([\\.,]\\d+)?"
 func FindRangeLimits(local, entry string) ([]int, error) {
 	decimalsRegex := regexp.MustCompile(decimal)
 	limitStrArr := decimalsRegex.FindAllString(entry, 2)
-	limitArr := make([]int, 0)
+	var limitArr []int
 
 	if limitStrArr == nil {
 		return make([]int, 0), errors.New("No range")

@@ -25,8 +25,7 @@ func RandomNumberReplacer(locale, entry, response, _ string) (string, string) {
 		return responseTag, util.GetMessage(locale, responseTag)
 	}
 
-	min := limitArr[0]
-	max := limitArr[1]
+	min, max := limitArr[0], limitArr[1]
 	randNum := rand.Intn((max - min)) + min
 	return RandomTag, fmt.Sprintf(response, strconv.Itoa(randNum))
 }
